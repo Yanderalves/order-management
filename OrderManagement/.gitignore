@@ -1,0 +1,65 @@
+# Build outputs
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Migrations/
+
+# Banco de dados local
+*.db
+*.db-shm
+*.db-wal
+*.mdf
+*.ldf
+
+# Logs
+*.log
+logs/
+
+# Publicação
+publish/
+**/Properties/PublishProfiles/
+
+# Variáveis de ambiente e secrets
+.env
+.env.*
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# Cobertura de testes
+coverage/
+*.coverage
+*.coveragexml
+TestResults/
+
+# Docker
+docker-compose.override.yml
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
