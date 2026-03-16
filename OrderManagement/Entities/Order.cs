@@ -1,30 +1,28 @@
-﻿namespace OrderManagement.Entities;
+﻿using OrderManagement.Enums;
+
+namespace OrderManagement.Entities;
 
 public class Order
 {
-    public Guid Id { get; set; }
-    public Customer Customer { get; set; }
-    public Guid CustomerId { get; set; }
-    public decimal TotalAmount { get; set; }
-    public decimal Discount { get; set; }
-    public decimal FinalAmount { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
-    public Address DeliveryAddress { get; set; }
+    public Guid Id { get; private set; }
+    public Customer Customer { get; private set; }
+    public Guid CustomerId { get; private set; }
+    public OrderStatus Status { get; private set; }
+    public decimal TotalAmount { get; private set; }
+    public decimal Discount { get; private set; }
+    public decimal FinalAmount { get; private set; }
+    public DateTime CreatedAt { get; private set; }
+    public DateTime UpdatedAt { get; private set; }
+    public Address DeliveryAddress { get; private set; }
+    public List<OrderItem> OrderItems { get; private set; }
 
-    public Order(Guid id, decimal totalAmount, decimal discount, decimal finalAmount, DateTime createdAt, DateTime updatedAt, Address deliveryAddress)
+    public Order(OrderStatus status, decimal totalAmount, decimal discount, decimal finalAmount, DateTime createdAt, DateTime updatedAt)
     {
-        Id = id;
+        Status = OrderStatus.Pending;
         TotalAmount = totalAmount;
         Discount = discount;
         FinalAmount = finalAmount;
-        CreatedAt = createdAt;
-        UpdatedAt = updatedAt;
-        DeliveryAddress = deliveryAddress;
-    }
-
-    private Order()
-    {
-        
+        CreatedAt = DateTime.Now;
+        UpdatedAt = DateTime.Now;
     }
 }
